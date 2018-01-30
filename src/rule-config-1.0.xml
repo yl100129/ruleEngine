@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleconfig>
+	<!-- scope的值为prototype|singleton，默认为prototype -->
+	<scope>prototype</scope>
+	<!-- scan表示被搜索的classpath路径，下面所有的.class文件都会被存储
+	cache表示被搜索到的class会放到公共缓存中
+	name指定class被放到上下文中的key值 -->
+	<functions>
+		<!-- <function name="f" class="com.hiaward.ruleengine.function.impl.ABC" /> -->
+	</functions>
+	<!-- string|url|datasource|file|jar|class -->
+	<loader type="string" scan="">
+		<props>
+			<property name="resource.loader">string</property>
+			<property name="string.resource.loader.class ">org.apache.velocity.runtime.resource.loader.StringResourceLoader
+			</property>
+			<property name="string.resource.loader.repository.name">repo</property>
+			<property name="string.resource.loader.repository.static">true</property>
+		</props>
+		<!-- on|off -->
+		<!-- <template using="on" name="rule1">
+			<![CDATA[
+			Hi, ${name}... this is some template! 戎 #f();
+			]]>
+		</template> -->
+	</loader>
+	<!-- <macro>
+		<![CDATA[
+		#{macro} (f) $f.abc() #end
+		]]>
+	</macro> -->
+</ruleconfig>
